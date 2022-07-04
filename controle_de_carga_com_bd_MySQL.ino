@@ -240,7 +240,6 @@ void Sending_data(){
           
           if(cliente.connect(servidor, portaHTTP)) {
     
-                //clienteArduino.println("GET /arduino/teste.php HTTP/1.0");
                 cliente.print("GET /ajax/versao_12/salva_bd.php");
                 cliente.print("?irms=");
                 cliente.print(amper);
@@ -250,7 +249,7 @@ void Sending_data(){
                 cliente.print(kwh);
                 
                 cliente.println(" HTTP/1.0");
-                cliente.println("Host: 192.168.0.16");
+                cliente.println("Host: 192.168.0.16"); // IP so servidor MySQL
                 cliente.println("Connection: close");
                 cliente.println();
          } 
