@@ -60,7 +60,7 @@
 
 						<div class="btn-group">
 
-						  <h4>Status da rede
+						  	<h4>Status da rede
 
 								<strong class="btn3">
 									<button type="button" class="btn btn-default botaoEnvia" id="btn3">Atualizar</button>
@@ -135,9 +135,9 @@
 						url: busca,     
 						method: 'POST',
 						data: {
-                            select_date : $('#search_data').val(), 
-                        },
-                        cache : false,
+                            				select_date : $('#search_data').val(), 
+         					},
+                        			cache : false,
 
 						success: function(data){
 							$('#tabela').html(data);
@@ -172,7 +172,7 @@
 				$('.botaoEnvia').click(function(){
 
 					var valor = $(this).attr('ID');
-			    	enviaDados(valor);
+			    		enviaDados(valor);
 			  	});
 			
 				function enviaDados(dado_botao){	
@@ -209,7 +209,7 @@
 			  	}
 
 				$('#btn3').click(function(){
-			    	status_do_rele();
+			    		status_do_rele();
 			  	});
 
 				setInterval(status_do_rele, 60000);
@@ -219,7 +219,7 @@
 					$('#status').removeClass('label-success').addClass('label-warning');
 					$('#status').text("Enviando Requisição...");
 
-			    	$.ajax({
+			    		$.ajax({
 
 						url: IP_Arduino, 
 						dataType: 'jsonp', 
