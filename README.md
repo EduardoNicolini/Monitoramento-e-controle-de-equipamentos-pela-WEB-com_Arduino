@@ -12,11 +12,11 @@ através de requisições AJAX, é enviado o valor do botão na página HTML e r
 
 ###### Materiais
 
-Arudino uno R3
-Shield Ethernet w5100
-Módulo rele
-Display Lcd 16x4
-Sensor De Corrente Ac 20a Não Invasivo Sct-013-020
+Arudino uno R3<br/>
+Shield Ethernet w5100<br/>
+Módulo rele<br/>
+Display Lcd 16x4<br/>
+Sensor De Corrente Ac 20a Não Invasivo Sct-013-020<br/>
 
 
 
