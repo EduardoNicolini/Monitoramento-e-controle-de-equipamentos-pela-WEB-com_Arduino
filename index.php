@@ -95,9 +95,6 @@
 						<input type="date" class="btn btn-default botaoEnvia" name="search_data" id="search_data" value='<?php echo date("Y-m-d"); ?>'>
 					</h3>
 
-					<!--  https://qastack.com.br/programming/21168521/table-fixed-header-and-scrollable-body 
-								http://jsfiddle.net/T9Bhm/7/
-					-->
 					<div class="table-responsive">   
 
 					  	<table class="table table-hover table-striped">
@@ -150,13 +147,10 @@
 
 					$.ajax({
 
-						//https://stackoverflow.com/questions/6809053/simple-jquery-php-and-jsonp-example
-						//https://www.w3schools.com/js/js_json_jsonp.asp
-
 						url: busca,
 						method: 'POST',     
-                        dataType: 'json',
-                        data: "mostra_valor", 
+						dataType: 'json',
+						data: "mostra_valor", 
 
 						success: function(data) {
 							//Le e retorna o valor de leiura do sensor no arduino e envia em um ID para a TAG span acima
