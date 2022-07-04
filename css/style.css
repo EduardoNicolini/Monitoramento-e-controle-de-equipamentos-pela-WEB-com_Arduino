@@ -1,0 +1,62 @@
+
+	.clean { 
+		padding: 0 !important; 
+		margin: 0 !important;
+	}
+
+	.well{
+		margin-top: 20px !important; 
+		height: 555px !important;
+	}
+ 
+	.margem_top{
+		margin: 0 0 20px !important; 
+		font-size: 16px !important;
+	}
+
+	.fonte_dados{
+		font-size: 30px !important;
+	}
+
+	.fonte_table{
+		font-size: 16px !important;
+	}
+
+	.btn3{
+		padding-left: 33px !important;
+	}
+
+	.btn_on_off{
+		padding-left: 20px !important;
+	}
+
+	.status_rele{
+		padding-left: 10px !important;
+		font-size: 20px !important;
+	}
+
+	/* Faz tabela ficar com o cabeçalho fixo e não junto com a barra de rolagem*/
+	
+	thead, tbody, tr, td, th { display: block; }
+
+	tr:after {
+		content: ' ';
+		display: block;
+		visibility: hidden;
+		clear: both;
+		width: 100% !important;
+	}
+
+	thead th {
+		height: 30px !important;
+	}
+
+	tbody {
+		height: 480px !important;
+		overflow-y: auto !important;
+	}
+	
+	tbody td, thead th {
+		width: 19.2% !important;
+		float: left !important;
+	}
