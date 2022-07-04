@@ -1,12 +1,15 @@
-# Monitoramento e controle de equipamentos pela WEB com Arduino e Banco de dados MySQL
+# Monitoramento e controle de equipámentos via WEB com Arduino e Banco de dados MySQL
 
-- Este projeto tem como finalidade o monitoramento via WEB o consumo eletrico em Amperes, Watts, Kwh(Quilowatt-hora),<br/> 
-&nbsp;inserindo esses dados de consumo em um banco de dados MySQL<br/>
+- Este projeto tem como finalidade o monitoramento via WEB do consumo elétrico de equipámentos.<br/>
+- As unidades de medidas são Amperes, Watts, Kwh(Quilowatt-hora).<br/> 
 
-- Utilizando sensor de carga acoplado ao arduino com um modulo shield faz a leitura do consumo de eletrecidade enviando esses dados ao servidor MySQL.<br/>
-- Utilizando HTML, Bootstrap, javascript e MySQL, atravez de requisições ajax, visualizamos o estado do rele, se ele está ativado ou desativado no momento,<br/>
-- e visualizamos os dados coletados e inseridos no banco de dados atrazes de uma tabela dinamicamente.<br/>
-- O sistema permite tambem o desligamento do equipamento atrazes de um rele acoplado ao arduino, sendo acionado ou desativado via WEB.<br/>
+- Utilizando um sensor de corrente acoplado ao arduino com um módulo Shield Ethernet w5100 o mesmo faz a leitura do consumo de eletrecidade e envia esses dados ao servidor MySQL.<br/>
+
+- No sistema WEB utilizando HTML, CSS, Bootstrap, javascript e MySQL, é possível controlar um módulo rele para ligar ou desligar um equipamento,<br/>
+através de requisições AJAX, é enviado o valor do botão na página HTML e receber o retorno do estado do rele se ele está ativado ou desativado<br/>
+
+- Também visualizamos os dados inseridos no banco de dados através de uma tabela dinamicamente com AJAX.<br/>
+
 
 
 
