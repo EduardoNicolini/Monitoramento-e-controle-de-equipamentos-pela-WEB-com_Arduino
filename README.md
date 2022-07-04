@@ -10,13 +10,13 @@ através de requisições AJAX, é enviado o valor do botão na página HTML e r
 
 - Também visualizamos os dados inseridos no banco de dados através de uma tabela dinamicamente com AJAX.<br/>
 
--- Materiais
+###### Materiais
 
-- Arudino uno R3
-- Shield Ethernet w5100
-- Módulo rele
-- Display Lcd 16x4
-- Sensor De Corrente Ac 20a Não Invasivo Sct-013-020
+Arudino uno R3
+Shield Ethernet w5100
+Módulo rele
+Display Lcd 16x4
+Sensor De Corrente Ac 20a Não Invasivo Sct-013-020
 
 
 
