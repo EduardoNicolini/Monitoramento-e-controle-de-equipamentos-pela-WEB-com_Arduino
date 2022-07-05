@@ -53,8 +53,8 @@ int rele = 9; // Porta digital onde está conectado meu Rele.
 
 /*******************************************************/
 
-void setup()
-{
+void setup(){
+  
   Serial.begin(9600); // Configura o valor de comunicação com a porta serial
   
   lcd.begin(16, 4);// Define a configuração do tamanho do LCD usado
