@@ -8,7 +8,7 @@
 #include <Ethernet.h>
 #include "EmonLib.h"
 #include <LiquidCrystal.h>
-#include<Timer.h>
+#include <Timer.h>
 
 Timer t; // Conficuração do tempo de Update com a WEB
 
@@ -48,7 +48,7 @@ int rele = 9; // Porta digital onde está conectado meu Rele.
   
   float Tempo = 0;
   
-  float x=0; //  Armazena o valor da conversão em reais R$
+  float x = 0; //  Armazena o valor da conversão em reais R$
   float y;
 
 /*******************************************************/
@@ -130,7 +130,7 @@ void loop(){
  /**************************************************/
 
     //Equação para obtenção do valor a pagar em reais R$
-   x =((kwh)*0.0002778)*0.49231;
+   x = ((kwh) * 0.0002778) * 0.49231;
    
    y = y + x;
 
@@ -230,7 +230,7 @@ void Sending_data(){
 
  /**************************************************/
     // Converte para KWh
-    float kwh = (Irms*rede*(Tempo/3600));//3600000 
+    float kwh = (Irms * rede * (Tempo/3600));//3600000 
     
     Tempo++;
     
