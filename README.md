@@ -1,4 +1,4 @@
-# Monitoramento e controle de equipámentos via WEB com Arduino e Banco de dados MySQL
+# Monitoramento e controle de equipamentos via WEB com Arduino e Banco de dados MySQL
 
 - Este projeto tem como finalidade o monitoramento via WEB do consumo elétrico de equipámentos.<br/>
 - As unidades de medidas são Amperes, Watts, Kwh(Quilowatt-hora).<br/> 
