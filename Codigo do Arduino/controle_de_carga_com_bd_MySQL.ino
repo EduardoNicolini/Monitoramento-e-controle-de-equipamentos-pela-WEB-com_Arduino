@@ -37,9 +37,7 @@ EnergyMonitor emon1;
 LiquidCrystal lcd(8, 7, 5, 4, 3, 2);  //Assign LCD screen pins
 
 int rede = 127.0; // Recebe o valor de ID do botão na pagina no servidor e retorna em JSON para tomar a ação 
-
 int analogPin1 = A0; // Porta de entrada analogica onde está conectado meu sensor de carga 
-
 int rele = 9; // Porta digital onde está conectado meu Rele.
 
 /*******************************************************/
@@ -47,7 +45,6 @@ int rele = 9; // Porta digital onde está conectado meu Rele.
   unsigned long ltmillis, tmillis, timems, previousMillis, refresh;
   
   float Tempo = 0;
-  
   float x = 0; //  Armazena o valor da conversão em reais R$
   float y;
 
@@ -62,23 +59,19 @@ void setup(){
   
 /*******************************************************/
   // TESTE COM VALORES EM REAIS A PAGAR POR Kwh
-
   previousMillis = millis();
 /*******************************************************/
   
   Serial.println("Iniciando programa..");
   Ethernet.begin(mac,ip,gateway,subnet);
   Serial.println("Server ativo no IP: ");
-  
   Serial.print(Ethernet.localIP()); // Imprime o valor do IP no monitor serial
-  
   server.begin();
   
    //Pino, calibracao - Cur Const= Ratio/BurdenR. 1800/62 = 29.
   emon1.current(analogPin1, 29);
   
   pinMode(rele, OUTPUT); // Configura se a porta usada é de saida ou de entrada
-
   digitalWrite(rele, HIGH); // Inicia a porta de saida em nivel alto 1
 
   // ConfiguraçÕes de Tempo de atualização dos dados para o servidor servidor MySql
@@ -90,20 +83,17 @@ void setup(){
   // Tempo de atualização dos dados para o servidor MySql
   //O valor de (60000, Sending_data) equivale a 1 minuto.(1800000) equivale a 30 minutos.(3600000) equivale a 60 minutos.
   t.every(30000, Sending_data); 
-  
 }
 
 void loop(){
   
   /*******************************************************/
-  // TESTE COM VALORES EM REAIS A PAGAR POR Kwh
-
   // Calcula quantidade de tempo desde a última measurment realpower.
     ltmillis = tmillis;
     tmillis = millis();
     timems = tmillis - ltmillis;
 
-/*******************************************************/
+ /*******************************************************/
 
   t.update();//Inicia a contagem de tempo de atualização de dados para o thingspeak em  Void Setup ()
 
@@ -117,10 +107,8 @@ void loop(){
     }
 
     float amper = (Irms);
-    
     float potencia = (Irms * rede);  //Irms * rede, 1
    
-
   /**************************************************/
     // Converte para KWh
     float kwh = (Irms*rede*(Tempo/3600));//3600000 
@@ -131,7 +119,6 @@ void loop(){
 
     //Equação para obtenção do valor a pagar em reais R$
    x = ((kwh) * 0.0002778) * 0.49231;
-   
    y = y + x;
 
   /**************************************************/
@@ -148,7 +135,6 @@ void loop(){
     if(client){
       
         boolean continua = true;
-        
         String linha = "";
   
         while(client.connected()){
@@ -156,7 +142,6 @@ void loop(){
             if(client.available()){
               
                 char c = client.read();
-                
                 linha.concat(c);
         
                 if(c == '\n' && continua){
@@ -173,9 +158,7 @@ void loop(){
                     if(iniciofrente>-1){  //verifica se o comando veio
                       
                         iniciofrente = iniciofrente+6; //pega o caractere seguinte,
-                        
                         int fimfrente = iniciofrente+3; //esse comando espero 3 caracteres
-                        
                         String acao = linha.substring(iniciofrente,fimfrente);//recupero o valor do comando
              
                         if (acao == "001"){ 
@@ -225,13 +208,11 @@ void Sending_data(){
     }
 
     float amper = (Irms);
-    
     float potencia = (Irms * rede);  //Irms * rede, 1
 
  /**************************************************/
     // Converte para KWh
     float kwh = (Irms * rede * (Tempo/3600));//3600000 
-    
     Tempo++;
     
  /**************************************************/
@@ -240,8 +221,7 @@ void Sending_data(){
           
         if(cliente.connect(servidor, portaHTTP)){
     
-            //clienteArduino.println("GET /arduino/teste.php HTTP/1.0");
-            cliente.print("GET /ajax/versao_12/salva_bd.php");
+            cliente.print("GET /salva_bd.php");
             cliente.print("?irms=");
             cliente.print(amper);
             cliente.print("&potencia=");
