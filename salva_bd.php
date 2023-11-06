@@ -5,7 +5,6 @@
 	$amper     = $_GET['irms'];
 	$potencia  = $_GET['potencia'];
 	$kwh       = $_GET['kwh'];
-		
 	
 	$sql = " INSERT INTO sensores (amper, watts, kwh, data) VALUES (:amper, :watts, :kwh, :data) ";
 	
@@ -16,14 +15,4 @@
 	$stmt->bindParam(':kwh', $kwh);
 	$stmt->bindParam(':data', date("y/m/d"));
 
-	if($stmt->execute()){
-
-		echo "'Dados inseridos com sucesso!";
-
-	}  
-	else{
-
-		echo "Erro ao inserir os dados";
-
-	}    
 ?>
