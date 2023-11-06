@@ -15,17 +15,13 @@
 		foreach ($dados as $val_sensor){
 
 		    echo "
-
 			<tr> 
 			    <td >".$val_sensor['amper']."</td>
 			    <td >".$val_sensor['watts']."</td>
 			    <td >".$val_sensor['kwh']."</td>
 			</tr>
-
 		    ";
-
 		}
-    
 	}
     
 	if(isset($_POST["mostra_valor"])){ 
@@ -38,13 +34,10 @@
 		
 		echo json_encode(
 			array(  
-				
 				'amper'=> $data_sensor['amper'] ?? 0,
 				'watts'=> $data_sensor['watts'] ?? 0,
 				'kwh' => $data_sensor['kwh'], 
-			
 			)
 		);
 	}
-
 ?>
